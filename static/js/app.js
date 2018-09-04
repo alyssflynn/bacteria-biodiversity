@@ -1,7 +1,4 @@
 function buildMetadata(sample) {
-  console.log(sample);
-  // @TODO: Complete the following function that builds the metadata panel
-
   // Fetch the metadata for a sample
   var sample_url = "/metadata/" + sample;
   d3.json(sample_url).then( (data) => {
@@ -38,7 +35,7 @@ function buildCharts(sample) {
   var sample_url = "/samples/" + sample;
 
   d3.json(sample_url).then( (data) => {
-    
+
     // var sampleData = [];
     // for (var i=0; i<sample_values.length;i++){
     //   var sample = {
@@ -54,10 +51,10 @@ function buildCharts(sample) {
     var sample_values = data.sample_values;
     var otu_ids = data.otu_ids;
     var otu_labels = data.otu_labels;
-    var otu_names = otu_labels.map(f => { 
-      return f.split(";").slice(-2).join(" "); 
+    var otu_names = otu_labels.map(f => {
+      return f.split(";").slice(-2).join(" ");
     });
-    
+
     // Create top 10 samples pie chart
     var pie_trace = {
       // labels: otu_ids.slice(-10),
@@ -69,11 +66,11 @@ function buildCharts(sample) {
     };
     var pie_data = [pie_trace];
     var pie_layout = {
-      title: "<b>Top 10 Bacteria</b> <br>Most common strains in sample",
-      showlegend: false,
+      title: "<b>Relative Abundance of Bacterial Species</b> <br>Bacterial species found in bellybutton sample",
+      showlegend: true,
     };
     Plotly.newPlot("pie", pie_data, pie_layout);
-    
+
     // Create bubble chart using the sample data
     var bubble_trace = {
       x: otu_ids,
@@ -89,7 +86,7 @@ function buildCharts(sample) {
       yaxis: { title: "Sample Value" },
     };
     Plotly.newPlot("bubble", bubble_data, bubble_layout);
-    
+
   });
 };
 
