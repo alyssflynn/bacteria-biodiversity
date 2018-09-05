@@ -57,16 +57,16 @@ function buildCharts(sample) {
 
     // Create top 10 samples pie chart
     var pie_trace = {
-      // labels: otu_ids.slice(-10),
-      labels: otu_names, //.slice(-10),
-      values: sample_values, //.slice(-10),
-      hovertext: otu_labels, //.slice(-10),
+      labels: otu_ids,
+      // labels: otu_names,
+      values: sample_values,
+      hovertext: otu_labels,
       // text: otu_ids.slice(-10).forEach(i => { return "ID:" + i } ),
       type: 'pie'
     };
     var pie_data = [pie_trace];
     var pie_layout = {
-      title: "<b>Relative Abundance of Bacterial Species</b> <br>Bacterial species found in bellybutton sample",
+      title: "<b>Relative Abundance of OTUs</b> <br>Bacterial species found in bellybutton sample",
       showlegend: true,
     };
     Plotly.newPlot("pie", pie_data, pie_layout);
@@ -77,12 +77,12 @@ function buildCharts(sample) {
       y: sample_values,
       mode: 'markers',
       marker: { size: sample_values },
-      text: otu_names,
+      text: otu_labels,
     };
     var bubble_data = [bubble_trace];
     var bubble_layout = {
-      title: "Sample Value vs ID",
-      xaxis: { title: "Sample ID" },
+      title: "Sample Value vs OTU ID",
+      xaxis: { title: "OTU ID" },
       yaxis: { title: "Sample Value" },
     };
     Plotly.newPlot("bubble", bubble_data, bubble_layout);
