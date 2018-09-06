@@ -1,0 +1,678 @@
+Last login: Mon Sep  3 16:46:49 on ttys001
+Alysss-MBP-2:bacteria-biodiversity alyss$ cd
+Alysss-MBP-2:~ alyss$ pip install gunicorn
+Collecting gunicorn
+  Downloading https://files.pythonhosted.org/packages/8c/da/b8dd8deb741bff556db53902d4706774c8e1e67265f69528c14c003644e6/gunicorn-19.9.0-py2.py3-none-any.whl (112kB)
+    100% |████████████████████████████████| 122kB 1.7MB/s 
+Installing collected packages: gunicorn
+Successfully installed gunicorn-19.9.0
+Alysss-MBP-2:~ alyss$ cd Projects/
+Alysss-MBP-2:Projects alyss$ ls
+RMS			earthquake-map		test-site
+bacteria-biodiversity	flask-tutorial
+citibike-analytics	flaskapp
+Alysss-MBP-2:Projects alyss$ cd bacteria-biodiversity/
+Alysss-MBP-2:bacteria-biodiversity alyss$ ls
+Procfile		db			templates
+README.md		requirements.txt
+app.py			static
+Alysss-MBP-2:bacteria-biodiversity alyss$ pip freeze > requirements.txt
+Alysss-MBP-2:bacteria-biodiversity alyss$ vim Procfile 
+Alysss-MBP-2:bacteria-biodiversity alyss$ heroku create alyss-bacteria
+Creating ⬢ alyss-bacteria... !
+ ▸    Name alyss-bacteria is already taken
+Alysss-MBP-2:bacteria-biodiversity alyss$ heroku create alyss-bacteria-biodiversity
+Creating ⬢ alyss-bacteria-biodiversity... done
+https://alyss-bacteria-biodiversity.herokuapp.com/ | https://git.heroku.com/alyss-bacteria-biodiversity.git
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 26, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (26/26), 403.36 KiB | 4.34 MiB/s, done.
+Total 26 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing python-3.6.6
+remote: -----> Installing pip
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting certifi==2018.4.16 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/7c/e6/92ad559b7192d846975fc916b65f667c7b8c3a32bea7372340bfe9a15fa5/certifi-2018.4.16-py2.py3-none-any.whl (150kB)
+remote:        Collecting click==6.7 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/34/c1/8806f99713ddb993c5366c362b2f908f18269f8d792aff1abfd700775a77/click-6.7-py2.py3-none-any.whl (71kB)
+remote:        Collecting Flask==1.0.2 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+remote:        Collecting Flask-SQLAlchemy==2.3.2 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/a1/44/294fb7f6bf49cc7224417cd0637018db9fee0729b4fe166e43e2bbb1f1c8/Flask_SQLAlchemy-2.3.2-py2.py3-none-any.whl
+remote:        Collecting itsdangerous==0.24 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/dc/b4/a60bcdba945c00f6d608d8975131ab3f25b22f2bcfe1dab221165194b2d4/itsdangerous-0.24.tar.gz (46kB)
+remote:        Collecting Jinja2==2.10 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+remote:        Collecting MarkupSafe==1.0 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz
+remote:        Collecting numpy==1.14.5 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 8))
+remote:          Downloading https://files.pythonhosted.org/packages/68/1e/116ad560de97694e2d0c1843a7a0075cc9f49e922454d32f49a80eb6f1f2/numpy-1.14.5-cp36-cp36m-manylinux1_x86_64.whl (12.2MB)
+remote:        Collecting pandas==0.23.3 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 9))
+remote:          Downloading https://files.pythonhosted.org/packages/f4/cb/a801eaf624e36fffaa6cf1f4597a1e4b0742c200ed928e689c58fb3cb811/pandas-0.23.3-cp36-cp36m-manylinux1_x86_64.whl (8.9MB)
+remote:        Collecting python-dateutil==2.7.3 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 10))
+remote:          Downloading https://files.pythonhosted.org/packages/cf/f5/af2b09c957ace60dcfac112b669c45c8c97e32f94aa8b56da4c6d1682825/python_dateutil-2.7.3-py2.py3-none-any.whl (211kB)
+remote:        Collecting pytz==2018.5 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 11))
+remote:          Downloading https://files.pythonhosted.org/packages/30/4e/27c34b62430286c6d59177a0842ed90dc789ce5d1ed740887653b898779a/pytz-2018.5-py2.py3-none-any.whl (510kB)
+remote:        Collecting six==1.11.0 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 12))
+remote:          Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+remote:        Collecting SQLAlchemy==1.2.10 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 13))
+remote:          Downloading https://files.pythonhosted.org/packages/8a/c2/29491103fd971f3988e90ee3a77bb58bad2ae2acd6e8ea30a6d1432c33a3/SQLAlchemy-1.2.10.tar.gz (5.6MB)
+remote:        Collecting Werkzeug==0.14.1 (from -r /tmp/build_f998dd57899f51767e1340d13d5273cd/requirements.txt (line 14))
+remote:          Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB
+remote:        Installing collected packages: certifi, click, Werkzeug, itsdangerous, MarkupSafe, Jinja2, Flask, SQLAlchemy, Flask-SQLAlchemy, numpy, six, python-dateutil, pytz, pandas
+remote:          Running setup.py install for itsdangerous: started
+remote:            Running setup.py install for itsdangerous: finished with status 'done'
+remote:          Running setup.py install for MarkupSafe: started
+remote:            Running setup.py install for MarkupSafe: finished with status 'done'
+remote:          Running setup.py install for SQLAlchemy: started
+remote:            Running setup.py install for SQLAlchemy: finished with status 'done'
+remote:        Successfully installed Flask-1.0.2 Flask-SQLAlchemy-2.3.2 Jinja2-2.10 MarkupSafe-1.0 SQLAlchemy-1.2.10 Werkzeug-0.14.1 certifi-2018.4.16 click-6.7 itsdangerous-0.24 numpy-1.14.5 pandas-0.23.3 python-dateutil-2.7.3 pytz-2018.5 six-1.11.0
+remote: 
+remote: -----> Discovering process types
+remote:        Procfile declares types -> work
+remote: 
+remote: -----> Compressing...
+remote:        Done: 70.2M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://alyss-bacteria-biodiversity.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ * [new branch]      master -> master
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push origin master
+Everything up-to-date
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Everything up-to-date
+Alysss-MBP-2:bacteria-biodiversity alyss$ ls
+Procfile		db			templates
+README.md		requirements.txt
+app.py			static
+Alysss-MBP-2:bacteria-biodiversity alyss$ vim Procfile 
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Everything up-to-date
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push origin master
+Everything up-to-date
+Alysss-MBP-2:bacteria-biodiversity alyss$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .DS_Store
+	modified:   Procfile
+	modified:   requirements.txt
+	modified:   static/js/app.js
+	modified:   static/js/bonus.js
+	modified:   templates/index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	static/.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Alysss-MBP-2:bacteria-biodiversity alyss$ git add .
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -m "added files"
+[master 5f1d3f3] added files
+ 7 files changed, 217 insertions(+), 26 deletions(-)
+ create mode 100644 static/.DS_Store
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 3.64 KiB | 1.82 MiB/s, done.
+Total 12 (delta 4), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_ee89607c3b1f9181d70cfb4898bf28e0/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting anaconda-client==1.6.9 (from -r /tmp/build_ee89607c3b1f9181d70cfb4898bf28e0/requirements.txt (line 2))
+remote:          Could not find a version that satisfies the requirement anaconda-client==1.6.9 (from -r /tmp/build_ee89607c3b1f9181d70cfb4898bf28e0/requirements.txt (line 2)) (from versions: 1.1.1, 1.2.2)
+remote:        No matching distribution found for anaconda-client==1.6.9 (from -r /tmp/build_ee89607c3b1f9181d70cfb4898bf28e0/requirements.txt (line 2))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ pip freeze > requirements.txt
+Alysss-MBP-2:bacteria-biodiversity alyss$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   requirements.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -am "added files"
+[master 8914acc] added files
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (15/15), 3.86 KiB | 1.93 MiB/s, done.
+Total 15 (delta 6), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_a2c9c76f35073d2c4197f510b97e4fb1/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting anaconda-client==1.6.9 (from -r /tmp/build_a2c9c76f35073d2c4197f510b97e4fb1/requirements.txt (line 2))
+remote:          Could not find a version that satisfies the requirement anaconda-client==1.6.9 (from -r /tmp/build_a2c9c76f35073d2c4197f510b97e4fb1/requirements.txt (line 2)) (from versions: 1.1.1, 1.2.2)
+remote:        No matching distribution found for anaconda-client==1.6.9 (from -r /tmp/build_a2c9c76f35073d2c4197f510b97e4fb1/requirements.txt (line 2))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ ls
+Procfile		db			templates
+README.md		requirements.txt
+app.py			static
+Alysss-MBP-2:bacteria-biodiversity alyss$ vim requirements.txt 
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -am "added files"
+[master c86ff5c] added files
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 18, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (18/18), 4.11 KiB | 2.06 MiB/s, done.
+Total 18 (delta 8), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_3d292875a1e6c972de8918ed1d42511c/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting anaconda-navigator==1.7.0 (from -r /tmp/build_3d292875a1e6c972de8918ed1d42511c/requirements.txt (line 3))
+remote:          Could not find a version that satisfies the requirement anaconda-navigator==1.7.0 (from -r /tmp/build_3d292875a1e6c972de8918ed1d42511c/requirements.txt (line 3)) (from versions: )
+remote:        No matching distribution found for anaconda-navigator==1.7.0 (from -r /tmp/build_3d292875a1e6c972de8918ed1d42511c/requirements.txt (line 3))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   requirements.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -am "edit requirements"
+[master 7d6e648] edit requirements
+ 1 file changed, 13 insertions(+), 22 deletions(-)
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 21, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (21/21), 4.51 KiB | 1.50 MiB/s, done.
+Total 21 (delta 10), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_8444a296ec00158811f4b61f48b55d8e/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting anaconda-client==1.6.9 (from -r /tmp/build_8444a296ec00158811f4b61f48b55d8e/requirements.txt (line 2))
+remote:          Could not find a version that satisfies the requirement anaconda-client==1.6.9 (from -r /tmp/build_8444a296ec00158811f4b61f48b55d8e/requirements.txt (line 2)) (from versions: 1.1.1, 1.2.2)
+remote:        No matching distribution found for anaconda-client==1.6.9 (from -r /tmp/build_8444a296ec00158811f4b61f48b55d8e/requirements.txt (line 2))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ cd
+Alysss-MBP-2:~ alyss$ pip install pipenv
+Requirement already satisfied: pipenv in ./anaconda3/lib/python3.6/site-packages (11.10.0)
+Requirement already satisfied: pip>=9.0.1 in ./anaconda3/lib/python3.6/site-packages (from pipenv) (18.0)
+Requirement already satisfied: virtualenv in ./anaconda3/lib/python3.6/site-packages (from pipenv) (15.2.0)
+Requirement already satisfied: certifi in ./anaconda3/lib/python3.6/site-packages (from pipenv) (2018.8.24)
+Requirement already satisfied: virtualenv-clone>=0.2.5 in ./anaconda3/lib/python3.6/site-packages (from pipenv) (0.3.0)
+Requirement already satisfied: setuptools>=36.2.1 in ./anaconda3/lib/python3.6/site-packages (from pipenv) (38.4.0)
+Alysss-MBP-2:~ alyss$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+Alysss-MBP-2:~ alyss$ cd Projects/
+Alysss-MBP-2:Projects alyss$ ls
+RMS			citibike-analytics	flask-tutorial		test-site
+bacteria-biodiversity	earthquake-map		flaskapp
+Alysss-MBP-2:Projects alyss$ cd bacteria-biodiversity/
+Alysss-MBP-2:bacteria-biodiversity alyss$ ls
+Procfile		app.py			requirements.txt	templates
+README.md		db			static
+Alysss-MBP-2:bacteria-biodiversity alyss$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   requirements.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -am "edit requirements"
+[master 697cef2] edit requirements
+ 1 file changed, 2 deletions(-)
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 24, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (24/24), 4.75 KiB | 1.19 MiB/s, done.
+Total 24 (delta 12), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting appnope==0.1.0 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/87/a9/7985e6a53402f294c8f0e8eff3151a83f1fb901fa92909bb3ff29b4d22af/appnope-0.1.0-py2.py3-none-any.whl
+remote:        Collecting appscript==1.0.1 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/35/0b/0ad06b376b2119c6c02a6d214070c8528081ed868bf82853d4758bf942eb/appscript-1.0.1.tar.gz (411kB)
+remote:        Collecting asn1crypto==0.24.0 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl (101kB)
+remote:        Collecting astroid==1.6.1 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/cb/8c/18fefaf865c3e48ed31d60d53a8f85ba7e8b27fe9bd115cecae876a8d58e/astroid-1.6.1-py2.py3-none-any.whl (288kB)
+remote:        Collecting astropy==2.0.3 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/d7/5a/6e2c3e8073cbd59eecdd8f164bbb39c371282f32f8297013ff20d019dea1/astropy-2.0.3-cp36-cp36m-manylinux1_x86_64.whl (9.2MB)
+remote:        Collecting attrs==17.4.0 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/b5/60/4e178c1e790fd60f1229a9b3cb2f8bc2f4cc6ff2c8838054c142c70b5adc/attrs-17.4.0-py2.py3-none-any.whl
+remote:        Collecting Babel==2.5.3 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 8))
+remote:          Downloading https://files.pythonhosted.org/packages/94/03/14e68ad12e771a79cf96792f7158d68a7b3d8c7b2badf39e9ef1f65b57d6/Babel-2.5.3-py2.py3-none-any.whl (6.8MB)
+remote:        Collecting backports.shutil-get-terminal-size==1.0.0 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 9))
+remote:          Downloading https://files.pythonhosted.org/packages/7d/cd/1750d6c35fe86d35f8562091737907f234b78fdffab42b29c72b1dd861f4/backports.shutil_get_terminal_size-1.0.0-py2.py3-none-any.whl
+remote:        Collecting beautifulsoup4==4.6.0 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 10))
+remote:          Downloading https://files.pythonhosted.org/packages/9e/d4/10f46e5cfac773e22707237bfcd51bbffeaf0a576b0a847ec7ab15bd7ace/beautifulsoup4-4.6.0-py3-none-any.whl (86kB)
+remote:        Collecting bitarray==0.8.1 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 11))
+remote:          Downloading https://files.pythonhosted.org/packages/0a/da/9f61d28a20c42b4963334efacfd257c85150ede96d0cd2509b37da69da47/bitarray-0.8.1.tar.gz (46kB)
+remote:        Collecting bkcharts==0.2 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 12))
+remote:          Downloading https://files.pythonhosted.org/packages/8f/bf/f4975a10ce859da55e17c16fff45159f224344a6220e79c528ab288d0720/bkcharts-0.2.tar.gz (97kB)
+remote:        Collecting blaze==0.11.3 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 13))
+remote:          Could not find a version that satisfies the requirement blaze==0.11.3 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 13)) (from versions: 0.1, 0.7.0, 0.7.2, 0.7.3, 0.8.0, 0.8.2, 0.8.3, 0.9.0, 0.9.1, 0.10.0, 0.10.1)
+remote:        No matching distribution found for blaze==0.11.3 (from -r /tmp/build_7527e341bbf4f2de3bbe2bf96d6b3509/requirements.txt (line 13))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -am "edit requirements"
+[master 7a02aea] edit requirements
+ 1 file changed, 4 deletions(-)
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 27, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (27/27), 4.99 KiB | 1.66 MiB/s, done.
+Total 27 (delta 14), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting appnope==0.1.0 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/87/a9/7985e6a53402f294c8f0e8eff3151a83f1fb901fa92909bb3ff29b4d22af/appnope-0.1.0-py2.py3-none-any.whl
+remote:        Collecting appscript==1.0.1 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/35/0b/0ad06b376b2119c6c02a6d214070c8528081ed868bf82853d4758bf942eb/appscript-1.0.1.tar.gz (411kB)
+remote:        Collecting asn1crypto==0.24.0 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl (101kB)
+remote:        Collecting astroid==1.6.1 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/cb/8c/18fefaf865c3e48ed31d60d53a8f85ba7e8b27fe9bd115cecae876a8d58e/astroid-1.6.1-py2.py3-none-any.whl (288kB)
+remote:        Collecting astropy==2.0.3 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/d7/5a/6e2c3e8073cbd59eecdd8f164bbb39c371282f32f8297013ff20d019dea1/astropy-2.0.3-cp36-cp36m-manylinux1_x86_64.whl (9.2MB)
+remote:        Collecting attrs==17.4.0 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/b5/60/4e178c1e790fd60f1229a9b3cb2f8bc2f4cc6ff2c8838054c142c70b5adc/attrs-17.4.0-py2.py3-none-any.whl
+remote:        Collecting Babel==2.5.3 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 8))
+remote:          Downloading https://files.pythonhosted.org/packages/94/03/14e68ad12e771a79cf96792f7158d68a7b3d8c7b2badf39e9ef1f65b57d6/Babel-2.5.3-py2.py3-none-any.whl (6.8MB)
+remote:        Collecting backports.shutil-get-terminal-size==1.0.0 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 9))
+remote:          Downloading https://files.pythonhosted.org/packages/7d/cd/1750d6c35fe86d35f8562091737907f234b78fdffab42b29c72b1dd861f4/backports.shutil_get_terminal_size-1.0.0-py2.py3-none-any.whl
+remote:        Collecting beautifulsoup4==4.6.0 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 10))
+remote:          Downloading https://files.pythonhosted.org/packages/9e/d4/10f46e5cfac773e22707237bfcd51bbffeaf0a576b0a847ec7ab15bd7ace/beautifulsoup4-4.6.0-py3-none-any.whl (86kB)
+remote:        Collecting bitarray==0.8.1 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 11))
+remote:          Downloading https://files.pythonhosted.org/packages/0a/da/9f61d28a20c42b4963334efacfd257c85150ede96d0cd2509b37da69da47/bitarray-0.8.1.tar.gz (46kB)
+remote:        Collecting bkcharts==0.2 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 12))
+remote:          Downloading https://files.pythonhosted.org/packages/8f/bf/f4975a10ce859da55e17c16fff45159f224344a6220e79c528ab288d0720/bkcharts-0.2.tar.gz (97kB)
+remote:        Collecting boto==2.48.0 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 13))
+remote:          Downloading https://files.pythonhosted.org/packages/bd/b7/a88a67002b1185ed9a8e8a6ef15266728c2361fcb4f1d02ea331e4c7741d/boto-2.48.0-py2.py3-none-any.whl (1.4MB)
+remote:        Collecting Bottleneck==1.2.1 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 14))
+remote:          Downloading https://files.pythonhosted.org/packages/05/ae/cedf5323f398ab4e4ff92d6c431a3e1c6a186f9b41ab3e8258dff786a290/Bottleneck-1.2.1.tar.gz (105kB)
+remote:        Collecting cffi==1.11.4 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 16))
+remote:          Downloading https://files.pythonhosted.org/packages/1f/c5/d214b7333439ca6dc717f484582ca08204ed852f93398a06f01dd2d9120f/cffi-1.11.4-cp36-cp36m-manylinux1_x86_64.whl (420kB)
+remote:        Collecting chardet==3.0.4 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 17))
+remote:          Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+remote:        Collecting click-plugins==1.0.3 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 19))
+remote:          Downloading https://files.pythonhosted.org/packages/77/05/da5c9e19457f20cadfe22c397cd3852577066066f63e40f2baa0831b1693/click-plugins-1.0.3.tar.gz
+remote:        Collecting cligj==0.4.0 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 20))
+remote:          Downloading https://files.pythonhosted.org/packages/fc/05/e8384e1f7c8689cd1b91818a24cc860077c73368fb285ba53fbd8556ec98/cligj-0.4.0-py3-none-any.whl
+remote:        Collecting cloudpickle==0.5.2 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 21))
+remote:          Downloading https://files.pythonhosted.org/packages/aa/18/514b557c4d8d4ada1f0454ad06c845454ad438fd5c5e0039ba51d6b032fe/cloudpickle-0.5.2-py2.py3-none-any.whl
+remote:        Collecting clyent==1.2.2 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 22))
+remote:          Could not find a version that satisfies the requirement clyent==1.2.2 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 22)) (from versions: 0.1.0, 0.2.0, 0.2.1, 0.3.0, 0.3.2, 0.3.3, 0.3.4, 1.0.0, 1.0.1, 1.1.0, 1.2.0, 1.2.1)
+remote:        No matching distribution found for clyent==1.2.2 (from -r /tmp/build_a7d110008daca209c0a3dffa444df62e/requirements.txt (line 22))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -am "edit requirements"
+[master 446ccf6] edit requirements
+ 1 file changed, 1 deletion(-)
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 30, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (30/30), 5.21 KiB | 1.74 MiB/s, done.
+Total 30 (delta 16), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting appnope==0.1.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/87/a9/7985e6a53402f294c8f0e8eff3151a83f1fb901fa92909bb3ff29b4d22af/appnope-0.1.0-py2.py3-none-any.whl
+remote:        Collecting appscript==1.0.1 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/35/0b/0ad06b376b2119c6c02a6d214070c8528081ed868bf82853d4758bf942eb/appscript-1.0.1.tar.gz (411kB)
+remote:        Collecting asn1crypto==0.24.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl (101kB)
+remote:        Collecting astroid==1.6.1 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/cb/8c/18fefaf865c3e48ed31d60d53a8f85ba7e8b27fe9bd115cecae876a8d58e/astroid-1.6.1-py2.py3-none-any.whl (288kB)
+remote:        Collecting astropy==2.0.3 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/d7/5a/6e2c3e8073cbd59eecdd8f164bbb39c371282f32f8297013ff20d019dea1/astropy-2.0.3-cp36-cp36m-manylinux1_x86_64.whl (9.2MB)
+remote:        Collecting attrs==17.4.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/b5/60/4e178c1e790fd60f1229a9b3cb2f8bc2f4cc6ff2c8838054c142c70b5adc/attrs-17.4.0-py2.py3-none-any.whl
+remote:        Collecting Babel==2.5.3 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 8))
+remote:          Downloading https://files.pythonhosted.org/packages/94/03/14e68ad12e771a79cf96792f7158d68a7b3d8c7b2badf39e9ef1f65b57d6/Babel-2.5.3-py2.py3-none-any.whl (6.8MB)
+remote:        Collecting backports.shutil-get-terminal-size==1.0.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 9))
+remote:          Downloading https://files.pythonhosted.org/packages/7d/cd/1750d6c35fe86d35f8562091737907f234b78fdffab42b29c72b1dd861f4/backports.shutil_get_terminal_size-1.0.0-py2.py3-none-any.whl
+remote:        Collecting beautifulsoup4==4.6.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 10))
+remote:          Downloading https://files.pythonhosted.org/packages/9e/d4/10f46e5cfac773e22707237bfcd51bbffeaf0a576b0a847ec7ab15bd7ace/beautifulsoup4-4.6.0-py3-none-any.whl (86kB)
+remote:        Collecting bitarray==0.8.1 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 11))
+remote:          Downloading https://files.pythonhosted.org/packages/0a/da/9f61d28a20c42b4963334efacfd257c85150ede96d0cd2509b37da69da47/bitarray-0.8.1.tar.gz (46kB)
+remote:        Collecting bkcharts==0.2 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 12))
+remote:          Downloading https://files.pythonhosted.org/packages/8f/bf/f4975a10ce859da55e17c16fff45159f224344a6220e79c528ab288d0720/bkcharts-0.2.tar.gz (97kB)
+remote:        Collecting boto==2.48.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 13))
+remote:          Downloading https://files.pythonhosted.org/packages/bd/b7/a88a67002b1185ed9a8e8a6ef15266728c2361fcb4f1d02ea331e4c7741d/boto-2.48.0-py2.py3-none-any.whl (1.4MB)
+remote:        Collecting Bottleneck==1.2.1 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 14))
+remote:          Downloading https://files.pythonhosted.org/packages/05/ae/cedf5323f398ab4e4ff92d6c431a3e1c6a186f9b41ab3e8258dff786a290/Bottleneck-1.2.1.tar.gz (105kB)
+remote:        Collecting cffi==1.11.4 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 16))
+remote:          Downloading https://files.pythonhosted.org/packages/1f/c5/d214b7333439ca6dc717f484582ca08204ed852f93398a06f01dd2d9120f/cffi-1.11.4-cp36-cp36m-manylinux1_x86_64.whl (420kB)
+remote:        Collecting chardet==3.0.4 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 17))
+remote:          Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+remote:        Collecting click-plugins==1.0.3 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 19))
+remote:          Downloading https://files.pythonhosted.org/packages/77/05/da5c9e19457f20cadfe22c397cd3852577066066f63e40f2baa0831b1693/click-plugins-1.0.3.tar.gz
+remote:        Collecting cligj==0.4.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 20))
+remote:          Downloading https://files.pythonhosted.org/packages/fc/05/e8384e1f7c8689cd1b91818a24cc860077c73368fb285ba53fbd8556ec98/cligj-0.4.0-py3-none-any.whl
+remote:        Collecting cloudpickle==0.5.2 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 21))
+remote:          Downloading https://files.pythonhosted.org/packages/aa/18/514b557c4d8d4ada1f0454ad06c845454ad438fd5c5e0039ba51d6b032fe/cloudpickle-0.5.2-py2.py3-none-any.whl
+remote:        Collecting colorama==0.3.9 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 22))
+remote:          Downloading https://files.pythonhosted.org/packages/db/c8/7dcf9dbcb22429512708fe3a547f8b6101c0d02137acbd892505aee57adf/colorama-0.3.9-py2.py3-none-any.whl
+remote:        Collecting contextlib2==0.5.5 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 23))
+remote:          Downloading https://files.pythonhosted.org/packages/a2/71/8273a7eeed0aff6a854237ab5453bc9aa67deb49df4832801c21f0ff3782/contextlib2-0.5.5-py2.py3-none-any.whl
+remote:        Collecting cryptography==2.1.4 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 24))
+remote:          Downloading https://files.pythonhosted.org/packages/4e/e0/4959b48f04c879414972048fe2bedc96825e39c5413ae241c230fba58783/cryptography-2.1.4-cp36-cp36m-manylinux1_x86_64.whl (2.2MB)
+remote:        Collecting cycler==0.10.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 25))
+remote:          Downloading https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl
+remote:        Collecting Cython==0.27.3 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 26))
+remote:          Downloading https://files.pythonhosted.org/packages/e9/91/46cb3f4c73f1e96faa517f96e9d12de5b8c97d404c7ab71553da0e58c980/Cython-0.27.3-cp36-cp36m-manylinux1_x86_64.whl (3.1MB)
+remote:        Collecting cytoolz==0.9.0 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 27))
+remote:          Downloading https://files.pythonhosted.org/packages/88/6b/839e810813adc35547423548e7a0b8d12a1bf7f138371bf4e0eee907482b/cytoolz-0.9.0.tar.gz (443kB)
+remote:        Collecting dask==0.16.1 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 28))
+remote:          Downloading https://files.pythonhosted.org/packages/da/7f/a024cabe77749d3c28abd8161a354476183b7b7698eeba1e3218ab0761b5/dask-0.16.1-py2.py3-none-any.whl (558kB)
+remote:        Collecting datashape==0.5.4 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 29))
+remote:          Could not find a version that satisfies the requirement datashape==0.5.4 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 29)) (from versions: 0.3.0, 0.3.1, 0.4.0, 0.4.2, 0.4.3, 0.4.4, 0.4.5, 0.4.6, 0.4.7, 0.5.0, 0.5.1, 0.5.2)
+remote:        No matching distribution found for datashape==0.5.4 (from -r /tmp/build_be159aaacb20b9d12cdc76cf7c1732d1/requirements.txt (line 29))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ git commit -am "edit requirements"
+[master 8e6bdca] edit requirements
+ 1 file changed, 1 deletion(-)
+Alysss-MBP-2:bacteria-biodiversity alyss$ git push heroku master
+Counting objects: 33, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (31/31), done.
+Writing objects: 100% (33/33), 5.44 KiB | 927.00 KiB/s, done.
+Total 33 (delta 18), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Python app detected
+remote: -----> Installing requirements with pip
+remote:        Collecting alabaster==0.7.10 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/2e/c3/9b7dcd8548cf2c00531763ba154e524af575e8f36701bacfe5bcadc67440/alabaster-0.7.10-py2.py3-none-any.whl
+remote:        Collecting appnope==0.1.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/87/a9/7985e6a53402f294c8f0e8eff3151a83f1fb901fa92909bb3ff29b4d22af/appnope-0.1.0-py2.py3-none-any.whl
+remote:        Collecting appscript==1.0.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/35/0b/0ad06b376b2119c6c02a6d214070c8528081ed868bf82853d4758bf942eb/appscript-1.0.1.tar.gz (411kB)
+remote:        Collecting asn1crypto==0.24.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl (101kB)
+remote:        Collecting astroid==1.6.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/cb/8c/18fefaf865c3e48ed31d60d53a8f85ba7e8b27fe9bd115cecae876a8d58e/astroid-1.6.1-py2.py3-none-any.whl (288kB)
+remote:        Collecting astropy==2.0.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/d7/5a/6e2c3e8073cbd59eecdd8f164bbb39c371282f32f8297013ff20d019dea1/astropy-2.0.3-cp36-cp36m-manylinux1_x86_64.whl (9.2MB)
+remote:        Collecting attrs==17.4.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/b5/60/4e178c1e790fd60f1229a9b3cb2f8bc2f4cc6ff2c8838054c142c70b5adc/attrs-17.4.0-py2.py3-none-any.whl
+remote:        Collecting Babel==2.5.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 8))
+remote:          Downloading https://files.pythonhosted.org/packages/94/03/14e68ad12e771a79cf96792f7158d68a7b3d8c7b2badf39e9ef1f65b57d6/Babel-2.5.3-py2.py3-none-any.whl (6.8MB)
+remote:        Collecting backports.shutil-get-terminal-size==1.0.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 9))
+remote:          Downloading https://files.pythonhosted.org/packages/7d/cd/1750d6c35fe86d35f8562091737907f234b78fdffab42b29c72b1dd861f4/backports.shutil_get_terminal_size-1.0.0-py2.py3-none-any.whl
+remote:        Collecting beautifulsoup4==4.6.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 10))
+remote:          Downloading https://files.pythonhosted.org/packages/9e/d4/10f46e5cfac773e22707237bfcd51bbffeaf0a576b0a847ec7ab15bd7ace/beautifulsoup4-4.6.0-py3-none-any.whl (86kB)
+remote:        Collecting bitarray==0.8.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 11))
+remote:          Downloading https://files.pythonhosted.org/packages/0a/da/9f61d28a20c42b4963334efacfd257c85150ede96d0cd2509b37da69da47/bitarray-0.8.1.tar.gz (46kB)
+remote:        Collecting bkcharts==0.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 12))
+remote:          Downloading https://files.pythonhosted.org/packages/8f/bf/f4975a10ce859da55e17c16fff45159f224344a6220e79c528ab288d0720/bkcharts-0.2.tar.gz (97kB)
+remote:        Collecting boto==2.48.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 13))
+remote:          Downloading https://files.pythonhosted.org/packages/bd/b7/a88a67002b1185ed9a8e8a6ef15266728c2361fcb4f1d02ea331e4c7741d/boto-2.48.0-py2.py3-none-any.whl (1.4MB)
+remote:        Collecting Bottleneck==1.2.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 14))
+remote:          Downloading https://files.pythonhosted.org/packages/05/ae/cedf5323f398ab4e4ff92d6c431a3e1c6a186f9b41ab3e8258dff786a290/Bottleneck-1.2.1.tar.gz (105kB)
+remote:        Collecting cffi==1.11.4 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 16))
+remote:          Downloading https://files.pythonhosted.org/packages/1f/c5/d214b7333439ca6dc717f484582ca08204ed852f93398a06f01dd2d9120f/cffi-1.11.4-cp36-cp36m-manylinux1_x86_64.whl (420kB)
+remote:        Collecting chardet==3.0.4 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 17))
+remote:          Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+remote:        Collecting click-plugins==1.0.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 19))
+remote:          Downloading https://files.pythonhosted.org/packages/77/05/da5c9e19457f20cadfe22c397cd3852577066066f63e40f2baa0831b1693/click-plugins-1.0.3.tar.gz
+remote:        Collecting cligj==0.4.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 20))
+remote:          Downloading https://files.pythonhosted.org/packages/fc/05/e8384e1f7c8689cd1b91818a24cc860077c73368fb285ba53fbd8556ec98/cligj-0.4.0-py3-none-any.whl
+remote:        Collecting cloudpickle==0.5.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 21))
+remote:          Downloading https://files.pythonhosted.org/packages/aa/18/514b557c4d8d4ada1f0454ad06c845454ad438fd5c5e0039ba51d6b032fe/cloudpickle-0.5.2-py2.py3-none-any.whl
+remote:        Collecting colorama==0.3.9 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 22))
+remote:          Downloading https://files.pythonhosted.org/packages/db/c8/7dcf9dbcb22429512708fe3a547f8b6101c0d02137acbd892505aee57adf/colorama-0.3.9-py2.py3-none-any.whl
+remote:        Collecting contextlib2==0.5.5 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 23))
+remote:          Downloading https://files.pythonhosted.org/packages/a2/71/8273a7eeed0aff6a854237ab5453bc9aa67deb49df4832801c21f0ff3782/contextlib2-0.5.5-py2.py3-none-any.whl
+remote:        Collecting cryptography==2.1.4 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 24))
+remote:          Downloading https://files.pythonhosted.org/packages/4e/e0/4959b48f04c879414972048fe2bedc96825e39c5413ae241c230fba58783/cryptography-2.1.4-cp36-cp36m-manylinux1_x86_64.whl (2.2MB)
+remote:        Collecting cycler==0.10.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 25))
+remote:          Downloading https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl
+remote:        Collecting Cython==0.27.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 26))
+remote:          Downloading https://files.pythonhosted.org/packages/e9/91/46cb3f4c73f1e96faa517f96e9d12de5b8c97d404c7ab71553da0e58c980/Cython-0.27.3-cp36-cp36m-manylinux1_x86_64.whl (3.1MB)
+remote:        Collecting cytoolz==0.9.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 27))
+remote:          Downloading https://files.pythonhosted.org/packages/88/6b/839e810813adc35547423548e7a0b8d12a1bf7f138371bf4e0eee907482b/cytoolz-0.9.0.tar.gz (443kB)
+remote:        Collecting dask==0.16.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 28))
+remote:          Downloading https://files.pythonhosted.org/packages/da/7f/a024cabe77749d3c28abd8161a354476183b7b7698eeba1e3218ab0761b5/dask-0.16.1-py2.py3-none-any.whl (558kB)
+remote:        Collecting decorator==4.2.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 29))
+remote:          Downloading https://files.pythonhosted.org/packages/e1/5a/53db15bf367d2028bdc6700dbdf1bdfab46b9f208b7516952817c0808118/decorator-4.2.1-py2.py3-none-any.whl
+remote:        Collecting descartes==1.1.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 30))
+remote:          Downloading https://files.pythonhosted.org/packages/e5/b6/1ed2eb03989ae574584664985367ba70cd9cf8b32ee8cad0e8aaeac819f3/descartes-1.1.0-py3-none-any.whl
+remote:        Collecting distributed==1.20.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 31))
+remote:          Downloading https://files.pythonhosted.org/packages/df/df/3a22963ef0751633b53edaa5d90f66c5e10edb3588be61ece4aee78bbce3/distributed-1.20.2-py2.py3-none-any.whl (425kB)
+remote:        Collecting docutils==0.14 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 32))
+remote:          Downloading https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl (543kB)
+remote:        Collecting entrypoints==0.2.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 33))
+remote:          Downloading https://files.pythonhosted.org/packages/cc/8b/4eefa9b47f1910b3d2081da67726b066e379b04ca897acfe9f92bac56147/entrypoints-0.2.3-py2.py3-none-any.whl
+remote:        Collecting et-xmlfile==1.0.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 34))
+remote:          Downloading https://files.pythonhosted.org/packages/22/28/a99c42aea746e18382ad9fb36f64c1c1f04216f41797f2f0fa567da11388/et_xmlfile-1.0.1.tar.gz
+remote:        Collecting fastcache==1.0.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 35))
+remote:          Downloading https://files.pythonhosted.org/packages/fb/98/93f2d36738868e8dd5a8dbfc918169b24658f63e5fa041fe000c22ae4f8b/fastcache-1.0.2.tar.gz
+remote:        Collecting filelock==2.0.13 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 36))
+remote:          Downloading https://files.pythonhosted.org/packages/45/4c/810fb0481b80766fd731981f93ce298fe36e4955ab7524ae66836499d743/filelock-2.0.13.tar.gz
+remote:        Collecting Fiona==1.7.11.post2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 37))
+remote:          Downloading https://files.pythonhosted.org/packages/cc/d9/6cd92c169f3f9837892eff6e0f4be310d6b93e3ac4125ff88d2a50c5fe0c/Fiona-1.7.11.post2-cp36-cp36m-manylinux1_x86_64.whl (15.7MB)
+remote:        Collecting Flask==0.12.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 38))
+remote:          Downloading https://files.pythonhosted.org/packages/77/32/e3597cb19ffffe724ad4bf0beca4153419918e7fa4ba6a34b04ee4da3371/Flask-0.12.2-py2.py3-none-any.whl (83kB)
+remote:        Collecting Flask-Cors==3.0.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 39))
+remote:          Downloading https://files.pythonhosted.org/packages/83/a7/c7243ffd096a491013956c9ee71e2ed0b7d14979fafe89986ca2d30fc6f7/Flask_Cors-3.0.3-py2.py3-none-any.whl
+remote:        Collecting Flask-PyMongo==2.0.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 40))
+remote:          Downloading https://files.pythonhosted.org/packages/cd/7d/5e2ddb975ed0e8b16fb2ba659ae557df98dac2dfb18bdd98bcb593bcceef/Flask_PyMongo-2.0.0-py2.py3-none-any.whl
+remote:        Collecting geopandas==0.3.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 42))
+remote:          Downloading https://files.pythonhosted.org/packages/0a/0e/8ae74743ed7915ddb7d70cc8dfa8fc0b9b9cc81205c6e288a01915a46192/geopandas-0.3.0-py2.py3-none-any.whl (888kB)
+remote:        Collecting gevent==1.2.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 43))
+remote:          Downloading https://files.pythonhosted.org/packages/a3/af/438c505b62f630c203a6a6a5a3b6fec49524c0cda7ab6392be03999537ad/gevent-1.2.2-cp36-cp36m-manylinux1_x86_64.whl (1.7MB)
+remote:        Collecting glob2==0.6 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 44))
+remote:          Downloading https://files.pythonhosted.org/packages/f0/e8/970c7a031b2d7f9a21fefaa8c9d5c38001f8f25055f4ffcb32b3dbecd1ea/glob2-0.6.tar.gz
+remote:        Collecting gmplot==1.2.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 45))
+remote:          Downloading https://files.pythonhosted.org/packages/e2/b1/e1429c31a40b3ef5840c16f78b506d03be9f27e517d3870a6fd0b356bd46/gmplot-1.2.0.tar.gz (115kB)
+remote:        Collecting gmpy2==2.0.8 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 46))
+remote:          Downloading https://files.pythonhosted.org/packages/90/f4/9a2e384b325b69bc5827b9a6510a8fb4a51698c915c06a3f25a86458892a/gmpy2-2.0.8.zip (280kB)
+remote:        Collecting greenlet==0.4.12 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 47))
+remote:          Downloading https://files.pythonhosted.org/packages/20/ea/e47c2fff6e91b20c05107411fa25fb93e66bd76ecd27f04e2224e7806f41/greenlet-0.4.12-cp36-cp36m-manylinux1_x86_64.whl (42kB)
+remote:        Collecting h5py==2.7.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 48))
+remote:          Downloading https://files.pythonhosted.org/packages/f2/b8/a63fcc840bba5c76e453dd712dbca63178a264c8990e0086b72965d4e954/h5py-2.7.1-cp36-cp36m-manylinux1_x86_64.whl (5.4MB)
+remote:        Collecting heapdict==1.0.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 49))
+remote:          Downloading https://files.pythonhosted.org/packages/e2/ca/f5feba2f939c97629dbce52a17acc95a0d10256ef620334795379dda8ce6/HeapDict-1.0.0.tar.gz
+remote:        Collecting heroku==0.1.4 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 50))
+remote:          Downloading https://files.pythonhosted.org/packages/24/d3/867ad4bb9a300653b0dd0c0134a9986efe39506f6d89eb17b68cfce73357/heroku-0.1.4.tar.gz
+remote:        Collecting html5lib==1.0.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 51))
+remote:          Downloading https://files.pythonhosted.org/packages/a5/62/bbd2be0e7943ec8504b517e62bab011b4946e1258842bc159e5dfde15b96/html5lib-1.0.1-py2.py3-none-any.whl (117kB)
+remote:        Collecting idna==2.6 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 52))
+remote:          Downloading https://files.pythonhosted.org/packages/27/cc/6dd9a3869f15c2edfab863b992838277279ce92663d334df9ecf5106f5c6/idna-2.6-py2.py3-none-any.whl (56kB)
+remote:        Collecting imageio==2.2.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 53))
+remote:          Downloading https://files.pythonhosted.org/packages/a0/4b/f68b2a2e3e98bc006f54ff6fee50f20c7ca4052ec6da68c58c299c7bedf5/imageio-2.2.0.tar.gz (3.3MB)
+remote:        Collecting imagesize==0.7.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 54))
+remote:          Downloading https://files.pythonhosted.org/packages/29/e9/342106962eac603ff7865a29de05e965af6a259e30fbccc6fc5aeac74d70/imagesize-0.7.1-py2.py3-none-any.whl
+remote:        Collecting ipykernel==4.8.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 55))
+remote:          Downloading https://files.pythonhosted.org/packages/32/ea/73a743bc29672bcc9e3470317c1b20fe02f3ec2a275737f7c84ad7e96d1a/ipykernel-4.8.0-py3-none-any.whl (108kB)
+remote:        Collecting ipython==6.2.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 56))
+remote:          Downloading https://files.pythonhosted.org/packages/e1/87/294b718125085559b56453be87d90777863173470167e5f1d5de20b9eea3/ipython-6.2.1-py3-none-any.whl (745kB)
+remote:        Collecting ipython-genutils==0.2.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 57))
+remote:          Downloading https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl
+remote:        Collecting ipywidgets==7.1.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 58))
+remote:          Downloading https://files.pythonhosted.org/packages/f8/af/1c31a69aa596294abbc6fabec049ee80332e9afe9fa05a1566d2905202f6/ipywidgets-7.1.1-py2.py3-none-any.whl (68kB)
+remote:        Collecting isort==4.2.15 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 59))
+remote:          Downloading https://files.pythonhosted.org/packages/a9/83/ca1c7737c9a43a3e5bd2b9954add88700267801415310395d4191e5ff8e3/isort-4.2.15-py2.py3-none-any.whl (43kB)
+remote:        Collecting jdcal==1.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 61))
+remote:          Downloading https://files.pythonhosted.org/packages/9b/fa/40beb2aa43a13f740dd5be367a10a03270043787833409c61b79e69f1dfd/jdcal-1.3.tar.gz
+remote:        Collecting jedi==0.11.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 62))
+remote:          Downloading https://files.pythonhosted.org/packages/50/ca/d71f5a427601c98eadabfd73104cacbec8cc230e8416158decf61a48b0c6/jedi-0.11.1-py2.py3-none-any.whl (250kB)
+remote:        Collecting jsonschema==2.6.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 64))
+remote:          Downloading https://files.pythonhosted.org/packages/77/de/47e35a97b2b05c2fadbec67d44cfcdcd09b8086951b331d82de90d2912da/jsonschema-2.6.0-py2.py3-none-any.whl
+remote:        Collecting jupyter==1.0.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 65))
+remote:          Downloading https://files.pythonhosted.org/packages/83/df/0f5dd132200728a86190397e1ea87cd76244e42d39ec5e88efd25b2abd7e/jupyter-1.0.0-py2.py3-none-any.whl
+remote:        Collecting jupyter-client==5.2.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 66))
+remote:          Downloading https://files.pythonhosted.org/packages/42/8a/5cca4d98fe28c4db6c2879b69ca5d106e0f4415aafda8bc4074deddbc3da/jupyter_client-5.2.2-py2.py3-none-any.whl (88kB)
+remote:        Collecting jupyter-console==5.2.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 67))
+remote:          Downloading https://files.pythonhosted.org/packages/77/82/6469cd7fccf7958cbe5dce2e623f1e3c5e27f1bb1ad36d90519bc2d5d370/jupyter_console-5.2.0-py2.py3-none-any.whl
+remote:        Collecting jupyter-core==4.4.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 68))
+remote:          Downloading https://files.pythonhosted.org/packages/1d/44/065d2d7bae7bebc06f1dd70d23c36da8c50c0f08b4236716743d706762a8/jupyter_core-4.4.0-py2.py3-none-any.whl (126kB)
+remote:        Collecting jupyterlab==0.31.5 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 69))
+remote:          Downloading https://files.pythonhosted.org/packages/f1/5b/2c8846802cf99c12f1ba44862a50037b63746b05801788d2a910d837d06d/jupyterlab-0.31.5-py2.py3-none-any.whl (13.0MB)
+remote:        Collecting jupyterlab-launcher==0.10.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 70))
+remote:          Downloading https://files.pythonhosted.org/packages/21/29/3d28086f726a06b2343b36237ec44f99b9abed7318ffa9aedcf6fe1a7366/jupyterlab_launcher-0.10.2-py2.py3-none-any.whl
+remote:        Collecting kdtree==0.16 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 71))
+remote:          Downloading https://files.pythonhosted.org/packages/00/3d/bd727d025b1706798aae14da3f69fc7d5a8639dc9e0eba37c7dcd43eb03e/kdtree-0.16-py2.py3-none-any.whl
+remote:        Collecting lazy-object-proxy==1.3.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 72))
+remote:          Downloading https://files.pythonhosted.org/packages/65/1f/2043ec33066e779905ed7e6580384425fdc7dc2ac64d6931060c75b0c5a3/lazy_object_proxy-1.3.1-cp36-cp36m-manylinux1_x86_64.whl (55kB)
+remote:        Collecting llvmlite==0.21.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 73))
+remote:          Downloading https://files.pythonhosted.org/packages/16/be/81017c43f2db7aea842ab10ebb55cc83645f712ce3039f77fe4112687277/llvmlite-0.21.0-cp36-cp36m-manylinux1_x86_64.whl (14.8MB)
+remote:        Collecting locket==0.2.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 74))
+remote:          Downloading https://files.pythonhosted.org/packages/d0/22/3c0f97614e0be8386542facb3a7dcfc2584f7b83608c02333bced641281c/locket-0.2.0.tar.gz
+remote:        Collecting lxml==4.1.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 75))
+remote:          Downloading https://files.pythonhosted.org/packages/81/da/4fabb01d59f3d2b256e75ffee9516ea849e23ddebea8235caad570fe7332/lxml-4.1.1-cp36-cp36m-manylinux1_x86_64.whl (5.6MB)
+remote:        Collecting matplotlib==2.1.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 77))
+remote:          Downloading https://files.pythonhosted.org/packages/35/96/6e71a040339d4efc54cf707061e70fd624c9120b48b992f919ba34df9cb1/matplotlib-2.1.2-cp36-cp36m-manylinux1_x86_64.whl (15.0MB)
+remote:        Collecting mccabe==0.6.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 78))
+remote:          Downloading https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl
+remote:        Collecting mistune==0.8.3 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 79))
+remote:          Downloading https://files.pythonhosted.org/packages/c8/8c/87f4d359438ba0321a2ae91936030110bfcc62fef752656321a72b8c1af9/mistune-0.8.3-py2.py3-none-any.whl
+remote:        Collecting mpmath==1.0.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 80))
+remote:          Downloading https://files.pythonhosted.org/packages/7a/05/b3d1472885d8dc0606936ea5da0ccb1b4785682e78ab15e34ada24aea8d5/mpmath-1.0.0.tar.gz (511kB)
+remote:        Collecting msgpack-python==0.5.1 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 81))
+remote:          Downloading https://files.pythonhosted.org/packages/af/98/c4c3bfe11ec19f9178b4db6888f3d765e98603f48352842a7f22c6de1f09/msgpack-python-0.5.1.tar.gz (138kB)
+remote:        Collecting multipledispatch==0.4.9 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 82))
+remote:          Downloading https://files.pythonhosted.org/packages/4c/b2/43d4944b102c8e8d1f2491dca85fea52982ee5dcf27312df1ef9ee7efb82/multipledispatch-0.4.9-py2.py3-none-any.whl
+remote:        Collecting munch==2.3.2 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 83))
+remote:          Downloading https://files.pythonhosted.org/packages/68/f4/260ec98ea840757a0da09e0ed8135333d59b8dfebe9752a365b04857660a/munch-2.3.2.tar.gz
+remote:        Collecting nb-conda-kernels==2.1.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 84))
+remote:          Could not find a version that satisfies the requirement nb-conda-kernels==2.1.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 84)) (from versions: )
+remote:        No matching distribution found for nb-conda-kernels==2.1.0 (from -r /tmp/build_35981e90e7ddba45dffd38f61e9815fe/requirements.txt (line 84))
+remote:  !     Push rejected, failed to compile Python app.
+remote: 
+remote:  !     Push failed
+remote: Verifying deploy...
+remote: 
+remote: !	Push rejected to alyss-bacteria-biodiversity.
+remote: 
+To https://git.heroku.com/alyss-bacteria-biodiversity.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/alyss-bacteria-biodiversity.git'
+Alysss-MBP-2:bacteria-biodiversity alyss$ 
